@@ -13,7 +13,7 @@
       </div>
       <div class="status">
           <div>
-              <a :href="profile.repos_url" target="_blank">
+              <a :href="profile.html_url+'?tab=repositories'" target="_blank">
               <strong>{{profile.public_repos}}</strong>
               Repos
               </a>
@@ -25,7 +25,7 @@
               </a>
           </div>
           <div>
-              <a :href="profile.followers_url" target="_blank">
+              <a :href="profile.html_url+'?tab=followers'" target="_blank">
               <strong>{{profile.followers}}</strong>
               Followers
               </a>
@@ -75,7 +75,6 @@ export default {
   padding-top:10px;
   padding-bottom:10px;
   white-space: pre;
-
 }
 .github-card {
     border: 1px solid #eaeaea;
