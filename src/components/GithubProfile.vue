@@ -74,6 +74,8 @@ export default {
   display:block;
   padding-top:10px;
   padding-bottom:10px;
+  white-space: pre;
+
 }
 .github-card {
     border: 1px solid #eaeaea;
