@@ -2,8 +2,6 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <GithubProfile username="kevinseebach"/>
-    <!-- <GithubProfile username="harmonico"/>
-    <GithubProfile username="KevinDEVGEA"/> -->
   </div>
 </template>
 
