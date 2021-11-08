@@ -3,10 +3,12 @@
       <div class="header">
           <a class="avatar" :href="profile.html_url" target="_blank">
             <img :src="profile.avatar_url">
-            <strong v-if="profile.name" class="dblock">{{profile.name}}</strong>
-            <span>@{{profile.login}}</span>
-            <small v-if="profile.location" class="dblock">{{profile.location}}</small>
           </a>
+          <strong v-if="profile.name" class="dblock">{{profile.name}}</strong>
+          <a :href="profile.html_url" target="_blank">
+            <span>@{{profile.login}}</span>
+          </a>
+          <small v-if="profile.location" class="dblock">{{profile.location}}</small>
       </div>
       <div v-if="profile.bio" id="bio">
           {{profile.bio}}
@@ -79,7 +81,7 @@ export default {
 .github-card {
     border: 1px solid #eaeaea;
     border-radius: 5px;
-    padding: 8px 8px 0;
+    padding: 15px 8px 15px 8px;
     background: #f4f4f4;
     color: #555;
     position: relative;
@@ -89,8 +91,9 @@ export default {
 .github-card strong {
     display: block;
     color: #292f33;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.6;
+    text-transform: uppercase;
 }
 .github-card a {
     color: #707070;
@@ -102,7 +105,6 @@ export default {
     color: #707070;
     width: 100%;
     margin-top: 15px;
-    margin-bottom: 15px;
     padding-top:10px;
     width: 100%;
     display: flex;
