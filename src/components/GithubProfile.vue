@@ -117,7 +117,6 @@ export default {
 
 .github-card .status div {
     padding: 4px 18px;
-    border-left: 1px sodivd #eee;
 }
 
 .github-card .footer {
