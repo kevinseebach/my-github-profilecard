@@ -84,7 +84,8 @@ export default {
     background: #f4f4f4;
     color: #555;
     position: relative;
-    width: 384px;
+    max-width: 375px;
+    width:100%;
 }
 .github-card strong {
     display: block;
