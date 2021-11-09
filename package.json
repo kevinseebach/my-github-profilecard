@@ -4,6 +4,10 @@
   "main": "dist/my-vue-github-profile.umd.js",
   "module": "dist/my-vue-github-profile.esm.js",
   "unpkg": "dist/my-vue-github-profile.min.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kevinseebach/my-github-profilecard.git"
+  },
   "browser": {
     "./sfc": "src/my-vue-github-profile.vue"
   },
