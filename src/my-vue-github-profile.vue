@@ -1,21 +1,19 @@
-<template lang="html">
+<template>
   <div class="github-card">
       <div class="header">
           <a class="avatar" :href="profile.html_url" target="_blank">
             <img :src="profile.avatar_url">
-          </a>
-          <strong v-if="profile.name" class="dblock">{{profile.name}}</strong>
-          <a :href="profile.html_url" target="_blank">
+            <strong v-if="profile.name" class="dblock">{{profile.name}}</strong>
             <span>@{{profile.login}}</span>
+            <small v-if="profile.location" class="dblock">{{profile.location}}</small>
           </a>
-          <small v-if="profile.location" class="dblock">{{profile.location}}</small>
       </div>
       <div v-if="profile.bio" id="bio">
           {{profile.bio}}
       </div>
       <div class="status">
           <div>
-              <a :href="profile.html_url+'?tab=repositories'" target="_blank">
+              <a :href="profile.repos_url" target="_blank">
               <strong>{{profile.public_repos}}</strong>
               Repos
               </a>
@@ -27,7 +25,7 @@
               </a>
           </div>
           <div>
-              <a :href="profile.html_url+'?tab=followers'" target="_blank">
+              <a :href="profile.followers_url" target="_blank">
               <strong>{{profile.followers}}</strong>
               Followers
               </a>
@@ -44,6 +42,7 @@
 
 <script>
 export default {
+  name:"MyGithubProfile",
   data(){
     return {
       profile:{}
@@ -76,24 +75,22 @@ export default {
   display:block;
   padding-top:10px;
   padding-bottom:10px;
-  white-space: pre;
 }
 .github-card {
     border: 1px solid #eaeaea;
     border-radius: 5px;
-    padding: 15px 8px 15px 8px;
+    padding: 8px 8px 0;
     background: #f4f4f4;
     color: #555;
     position: relative;
-    max-width: 375px;
-    width:100%;
+    width: 384px;
+    text-align:center;
 }
 .github-card strong {
     display: block;
     color: #292f33;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.6;
-    text-transform: uppercase;
 }
 .github-card a {
     color: #707070;
@@ -105,6 +102,7 @@ export default {
     color: #707070;
     width: 100%;
     margin-top: 15px;
+    margin-bottom: 15px;
     padding-top:10px;
     width: 100%;
     display: flex;
@@ -118,6 +116,7 @@ export default {
 
 .github-card .status div {
     padding: 4px 18px;
+    border-left: 1px sodivd #eee;
 }
 
 .github-card .footer {
@@ -133,6 +132,7 @@ export default {
   max-width: 150px;
   border-radius: 25px;
   box-shadow: inset 0 3px 6px rgba(0,0,0,0.16), 0 4px 6px rgba(0,0,0,0.45);
+  margin-bottom:10px;
 }
 
 </style>

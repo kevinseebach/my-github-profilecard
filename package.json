@@ -1,42 +1,24 @@
 {
-  "name": "vue-github-profile",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+  "name": "my-vue-github-profile",
+  "version": "0.0.2",
+  "main": "dist/my-vue-github-profile.umd.js",
+  "module": "dist/my-vue-github-profile.esm.js",
+  "unpkg": "dist/my-vue-github-profile.min.js",
+  "browser": {
+    "./sfc": "src/my-vue-github-profile.vue"
   },
-  "dependencies": {
-    "core-js": "^3.6.5",
-    "vue": "^2.6.11"
+  "scripts": {
+    "build": "npm run build:umd & npm run build:es & npm run build:unpkg",
+    "build:umd": "rollup --config build/rollup.config.js --format umd --file dist/my-vue-github-profile.umd.js",
+    "build:es": "rollup --config build/rollup.config.js --format es --file dist/my-vue-github-profile.esm.js",
+    "build:unpkg": "rollup --config build/rollup.config.js --format iife --file dist/my-vue-github-profile.min.js"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "~4.5.0",
-    "@vue/cli-plugin-eslint": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^6.2.2",
-    "vue-template-compiler": "^2.6.11"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
-    ],
-    "parserOptions": {
-      "parser": "babel-eslint"
-    },
-    "rules": {}
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead"
-  ]
+    "rollup": "^1.17.0",
+    "@rollup/plugin-buble": "^0.21.3",
+    "@rollup/plugin-commonjs": "^11.1.0",
+    "rollup-plugin-vue": "^5.0.1",
+    "vue": "^2.6.10",
+    "vue-template-compiler": "^2.6.10"
+  }
 }
